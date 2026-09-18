@@ -55,7 +55,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         {/* Current Active Pill */}
         <div className="active-chapter-pill">
           <span className="chapter-idx">{formatNumber(activeChapter)}</span>
-          <span className="chapter-name">{chapters[activeChapter]?.label || 'MỞ ĐẦU'}</span>
+          <span className="chapter-name">{(chapters[activeChapter]?.label || 'MỞ ĐẦU').replace(/^\d{2}\.?\s*/, '')}</span>
         </div>
 
         {/* Action Controls */}
