@@ -178,7 +178,6 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                 {/* Top Badge */}
                 <div className="card-top-badge">
                   <span className="badge-number">CHƯƠNG {formatNumber(idx)}</span>
-                  <span className="badge-pages">{ch.pages}</span>
                 </div>
 
                 {/* Artwork Image Container */}
@@ -248,7 +247,6 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
         </div>
 
         <div className="summary-right">
-          <span className="summary-pages-badge">📍 {currentChapter.pages}</span>
           <button className="summary-action-btn" onClick={() => onSelectChapter(currentChapter.id)}>
             KHÁM PHÁ CHƯƠNG NÀY ➔
           </button>
@@ -257,5 +255,4 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     </section>
   );
 };
-
 

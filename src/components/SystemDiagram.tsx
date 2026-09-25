@@ -119,11 +119,6 @@ export const SystemDiagram: React.FC<SystemDiagramProps> = ({
 
               <div className="panel-badge-row">
                 <span className="panel-badge-num">DẤU HIỆU {activeIdx + 1} / 04</span>
-                {points[activeIdx].textbookPage && (
-                  <span className="panel-badge-source">
-                    GIÁO TRÌNH TR. {points[activeIdx].textbookPage}
-                  </span>
-                )}
               </div>
 
               <h3 className="panel-title">{points[activeIdx].title}</h3>

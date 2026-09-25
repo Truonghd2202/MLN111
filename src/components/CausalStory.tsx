@@ -75,9 +75,6 @@ export const CausalStory: React.FC<CausalStoryProps> = ({
               <span className="stage-step-tag">
                 BƯỚC {activeStep + 1} / {totalSteps}
               </span>
-              {currentStep?.textbookPage && (
-                <span className="stage-page-tag">TRANG {currentStep.textbookPage}</span>
-              )}
             </div>
 
             <h3 className="stage-heading">{currentStep?.title}</h3>

@@ -67,16 +67,6 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
             <h3 className="ref-card-title">Giáo trình Triết học Mác – Lênin</h3>
             <p className="ref-card-publisher">NXB Chính trị quốc gia Sự thật</p>
 
-            <ul className="ref-page-list">
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 100 → Trang 108 <em>(Nguyên lý sản xuất & Giai cấp)</em></span>
-              </li>
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 108 → Trang 125 <em>(Phạm trù Đấu tranh & Dân tộc)</em></span>
-              </li>
-            </ul>
 
             <div className="ref-card-footer">
               <a
@@ -105,24 +95,6 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
             <h3 className="ref-card-title">Giáo trình Triết học Mác – Lênin</h3>
             <p className="ref-card-publisher">Bộ Giáo dục & Đào tạo — NXB Chính trị quốc gia Sự thật</p>
 
-            <ul className="ref-page-list">
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 179 → Trang 186 <em>(Khái niệm & Nguồn gốc giai cấp)</em></span>
-              </li>
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 187 → Trang 198 <em>(3 hình thức Đấu tranh giai cấp)</em></span>
-              </li>
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 199 → Trang 204 <em>(Dân tộc & Các hình thái cộng đồng)</em></span>
-              </li>
-              <li>
-                <span className="bookmark-icon">🔖</span>
-                <span>Trang 205 → Trang 206 <em>(Quan hệ Giai cấp × Dân tộc)</em></span>
-              </li>
-            </ul>
 
             <div className="ref-card-footer">
               <a

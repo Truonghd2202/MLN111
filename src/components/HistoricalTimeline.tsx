@@ -74,11 +74,6 @@ export const HistoricalTimeline: React.FC<HistoricalTimelineProps> = ({
               <span className="inspector-idx">
                 HÌNH THÁI XÃ HỘI {activeStageIdx + 1} / {stages.length}
               </span>
-              {currentStage.textbookPage && (
-                <span className="inspector-page">
-                  GIÁO TRÌNH TR. {currentStage.textbookPage}
-                </span>
-              )}
             </div>
 
             <h3 className="inspector-title">{currentStage.title}</h3>

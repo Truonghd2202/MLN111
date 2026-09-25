@@ -125,9 +125,6 @@ export const QuizExperience: React.FC<QuizExperienceProps> = ({ questions }) => 
           >
             <div className="explanation-status">
               {selectedOption === currentQ.answer ? '✓ CHÍNH XÁC' : '✕ CHƯA CHÍNH XÁC'}
-              {currentQ.textbookPage && (
-                <span className="textbook-ref">TRANG GIÁO TRÌNH: {currentQ.textbookPage}</span>
-              )}
             </div>
             <p className="explanation-text">{currentQ.explanation}</p>
 
