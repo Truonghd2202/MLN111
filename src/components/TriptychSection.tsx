@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface TriptychPanel {
   num: string;
@@ -26,7 +26,9 @@ export const TriptychSection: React.FC<TriptychSectionProps> = ({
   return (
     <section className="triptych-museum-scene">
       <div className="triptych-header">
-        <span className="eyebrow-tag">BA HÌNH THỨC ĐẤU TRANH</span>
+        <span className="eyebrow-tag">
+          Ba hình thức đấu tranh của giai cấp vô sản khi chưa có chính quyền
+        </span>
         <h2>{heading}</h2>
         {deck && <p className="triptych-deck">{deck}</p>}
       </div>
@@ -38,7 +40,11 @@ export const TriptychSection: React.FC<TriptychSectionProps> = ({
           <span className="gold-corner bl" />
           <span className="gold-corner br" />
 
-          <img src={triptychImage} alt={heading} className="triptych-img classical-engraving-img" />
+          <img
+            src={triptychImage}
+            alt={heading}
+            className="triptych-img classical-engraving-img"
+          />
         </div>
       )}
 
@@ -47,7 +53,7 @@ export const TriptychSection: React.FC<TriptychSectionProps> = ({
         {panels.map((p, idx) => (
           <div
             key={idx}
-            className={`triptych-panel-card ${activeHoverIdx === idx ? 'hovered' : ''}`}
+            className={`triptych-panel-card ${activeHoverIdx === idx ? "hovered" : ""}`}
             onMouseEnter={() => setActiveHoverIdx(idx)}
             onMouseLeave={() => setActiveHoverIdx(null)}
           >

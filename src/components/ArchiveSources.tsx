@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ArchiveSourcesProps {
   closingImage?: string;
@@ -18,8 +18,9 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
           GIAI CẤP · ĐẤU TRANH · DÂN TỘC · LỊCH SỬ
         </h2>
         <p className="summary-deck">
-          Lý luận Triết học Mác – Lênin chỉ ra mối quan hệ biện chứng sâu sắc giữa kinh tế,
-          giai cấp và sự phát triển dân tộc trong tiến trình văn minh nhân loại.
+          Lý luận Triết học Mác – Lênin chỉ ra mối quan hệ biện chứng sâu sắc
+          giữa kinh tế, giai cấp và sự phát triển dân tộc trong tiến trình văn
+          minh nhân loại.
         </p>
 
         {closingImage && (
@@ -29,12 +30,16 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
               onOpenLightbox &&
               onOpenLightbox(
                 closingImage,
-                'Bức họa tổng kết khảo luận Giai cấp & Dân tộc',
-                'Minh họa tổng kết các giá trị tư tưởng của học thuyết.'
+                "Bức họa tổng kết khảo luận Giai cấp & Dân tộc",
+                "Minh họa tổng kết các giá trị tư tưởng của học thuyết.",
               )
             }
           >
-            <img src={closingImage} alt="Tổng kết khảo luận" className="summary-artwork-img" />
+            <img
+              src={closingImage}
+              alt="Tổng kết khảo luận"
+              className="summary-artwork-img"
+            />
           </div>
         )}
       </div>
@@ -46,7 +51,8 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
             Tài liệu <span className="title-highlight">tham khảo</span>
           </h2>
           <p className="reference-subtitle">
-            Đọc hiểu sâu sắc hơn qua các giáo trình chính thức và nguồn tư liệu gốc.
+            Đọc hiểu sâu sắc hơn qua các giáo trình chính thức và nguồn tư liệu
+            gốc.
           </p>
         </div>
 
@@ -67,10 +73,9 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
             <h3 className="ref-card-title">Giáo trình Triết học Mác – Lênin</h3>
             <p className="ref-card-publisher">NXB Chính trị quốc gia Sự thật</p>
 
-
             <div className="ref-card-footer">
               <a
-                href="https://nxbcntqg.org.vn"
+                href="/docs/giao-trinh-mln-2019.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="ref-link-btn"
@@ -80,33 +85,7 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
             </div>
           </div>
 
-          {/* Card 2: Edition 2021 (Main Textbook Citation) */}
-          <div className="ref-card classical-frame is-primary-edition">
-            <span className="gold-corner tl" />
-            <span className="gold-corner tr" />
-            <span className="gold-corner bl" />
-            <span className="gold-corner br" />
-
-            <div className="ref-card-header">
-              <div className="ref-icon-badge cyan-flag">📘</div>
-              <span className="ref-edition-tag highlight">Phiên bản 2021 (Chính thức)</span>
-            </div>
-
-            <h3 className="ref-card-title">Giáo trình Triết học Mác – Lênin</h3>
-            <p className="ref-card-publisher">Bộ Giáo dục & Đào tạo — NXB Chính trị quốc gia Sự thật</p>
-
-
-            <div className="ref-card-footer">
-              <a
-                href="#hero"
-                className="ref-link-btn primary-btn"
-              >
-                Trích dẫn chính thức ↗
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3: Marxists Internet Archive */}
+          {/* Card 3: English reference materials */}
           <div className="ref-card classical-frame full-width-card">
             <span className="gold-corner tl" />
             <span className="gold-corner tr" />
@@ -115,31 +94,51 @@ export const ArchiveSources: React.FC<ArchiveSourcesProps> = ({
 
             <div className="ref-card-header">
               <div className="ref-icon-badge purple-globe">🌐</div>
-              <span className="ref-edition-tag">Nguồn gốc · English & Tiếng Việt</span>
+              <span className="ref-edition-tag">
+                Tài liệu tham khảo · English
+              </span>
             </div>
 
-            <h3 className="ref-card-title">Marxists Internet Archive</h3>
-            <p className="ref-card-publisher">Thư viện điện tử quốc tế kinh điển Mác – Lênin</p>
+            <h3 className="ref-card-title">
+              Tác phẩm gốc tham khảo bằng tiếng Anh
+            </h3>
+            <p className="ref-card-publisher">
+              Tác phẩm của Marx, Engels và Lenin
+            </p>
 
             <ul className="ref-page-list horizontal-list">
               <li>
                 <span className="bookmark-icon">🌐</span>
-                <span>Tư liệu gốc về chủ nghĩa Mác – Lênin trên toàn thế giới.</span>
+                <span>
+                  Tư liệu gốc về chủ nghĩa Mác – Lênin trên toàn thế giới.
+                </span>
               </li>
               <li>
                 <span className="bookmark-icon">📚</span>
-                <span>Bao gồm các tác phẩm kinh điển của K. Marx, F. Engels, V.I. Lenin và các nhà lý luận.</span>
+                <span>
+                  Bao gồm các tác phẩm kinh điển của K. Marx, F. Engels, V.I.
+                  Lenin và các nhà lý luận.
+                </span>
               </li>
             </ul>
 
             <div className="ref-card-footer">
               <a
-                href="https://www.marxists.org"
+                href="https://www.gutenberg.org/ebooks/61"
                 target="_blank"
                 rel="noreferrer"
                 className="ref-link-btn"
               >
-                Mở trang marxists.org ↗
+                Marx & Engels · The Communist Manifesto (toàn văn) ↗
+              </a>
+
+              <a
+                href="https://foreignlanguages.press/wp-content/uploads/2025/06/C40-The-Right-of-Nations-to-Self-Determination-Lenin-2nd-Printing-FINAL.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="ref-link-btn"
+              >
+                Lenin · The Right of Nations to Self-Determination ↗
               </a>
             </div>
           </div>

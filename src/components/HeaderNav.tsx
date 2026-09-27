@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface Chapter {
   id: string;
@@ -21,17 +21,46 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       if (totalHeight > 0) {
         const currentProgress = (window.scrollY / totalHeight) * 100;
         setScrollProgress(Math.min(100, Math.max(0, currentProgress)));
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const formatNumber = (n: number) => String(n).padStart(2, '0');
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visibleSection) return;
+
+        const chapterIndex = chapters.findIndex(
+          (chapter) => chapter.id === visibleSection.target.id,
+        );
+
+        if (chapterIndex >= 0) {
+          onSelectChapter(chapterIndex);
+        }
+      },
+      { rootMargin: "-20% 0px -65% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    chapters.forEach((chapter) => {
+      const section = document.getElementById(chapter.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [chapters, onSelectChapter]);
+
+  const formatNumber = (n: number) => String(n).padStart(2, "0");
 
   return (
     <>
@@ -55,7 +84,12 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         {/* Current Active Pill */}
         <div className="active-chapter-pill">
           <span className="chapter-idx">{formatNumber(activeChapter)}</span>
-          <span className="chapter-name">{(chapters[activeChapter]?.label || 'MỞ ĐẦU').replace(/^\d{2}\.?\s*/, '')}</span>
+          <span className="chapter-name">
+            {(chapters[activeChapter]?.label || "MỞ ĐẦU").replace(
+              /^\d{2}\.?\s*/,
+              "",
+            )}
+          </span>
         </div>
 
         {/* Action Controls */}
@@ -65,8 +99,15 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             onClick={() => setIsMenuOpen(true)}
             aria-label="Mở mục lục triển lãm"
           >
-            <span>MỤC LỰC</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <span>MỤC LỤC</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <line x1="4" y1="7" x2="20" y2="7" />
               <line x1="4" y1="12" x2="20" y2="12" />
               <line x1="4" y1="17" x2="20" y2="17" />
@@ -76,17 +117,20 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
       </header>
 
       {/* Side Chapter Rail */}
-      <nav className="chapter-sticky-rail" aria-label="Điều hướng nhanh các chương">
+      <nav
+        className="chapter-sticky-rail"
+        aria-label="Điều hướng nhanh các chương"
+      >
         {chapters.map((ch, idx) => (
           <a
             key={ch.id}
             href={`#${ch.id}`}
-            className={`rail-item ${activeChapter === idx ? 'active' : ''}`}
+            className={`rail-item ${activeChapter === idx ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               onSelectChapter(idx);
               const el = document.getElementById(ch.id);
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
             title={`${formatNumber(idx)} ${ch.label}`}
           >
@@ -102,7 +146,10 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           <div className="menu-overlay-content">
             <div className="menu-overlay-header">
               <span className="eyebrow-tag">DANH MỤC KHÁM PHÁ</span>
-              <button className="menu-close-btn" onClick={() => setIsMenuOpen(false)}>
+              <button
+                className="menu-close-btn"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 ĐÓNG ✕
               </button>
             </div>
@@ -117,7 +164,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                     setIsMenuOpen(false);
                     onSelectChapter(idx);
                     const el = document.getElementById(ch.id);
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
                   <span className="card-num">{formatNumber(idx)}</span>
