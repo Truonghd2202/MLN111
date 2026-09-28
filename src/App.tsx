@@ -142,6 +142,9 @@ export const App: React.FC = () => {
   const page25 = byNumber(25); // Sự phát triển các hình thái cộng đồng
   const page28 = byNumber(28); // Giai cấp x Dân tộc
 
+  // Mục 26–27 vẫn nằm trong dữ liệu như kiến thức mở rộng, nhưng cố ý không
+  // render vì chưa thuộc phạm vi thuyết trình hiện tại.
+
   return (
     <div className="app-exhibition-root">
       {/* Floating Header & Navigation Rail */}
@@ -470,6 +473,9 @@ export const App: React.FC = () => {
           note="Giai cấp xuất hiện trước dân tộc. Một dân tộc bao gồm nhiều giai cấp; một giai cấp có thể tồn tại ở nhiều dân tộc."
         />
 
+        {/* Mục 28 chỉ trình bày các ý thuộc trang in 206. Chiều dân tộc tác
+            động trở lại giai cấp nằm ở mục đọc thêm 207–208 trong dữ liệu,
+            ngoài phạm vi thuyết trình 179–206. */}
         <LessonContent page={byNumber(28)} />
 
         {/* 05. CHAPTER 5: CASE STUDY LỐI NHỎ */}

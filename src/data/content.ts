@@ -1019,7 +1019,8 @@ export const pages: MagazinePage[] = [
       "alt": "Quan hệ từ phương thức sản xuất tới giai cấp và dân tộc",
       "position": "side",
       "caption": "Sơ đồ minh họa do nhóm biên soạn; nội dung và nguồn được ghi bằng chữ bên cạnh."
-    }
+    },
+    "note": "Các ý trình bày trong mục này thuộc phạm vi trang in 206. Chiều dân tộc tác động trở lại giai cấp được giữ ở mục đọc thêm, dẫn trang in 207–208 và nằm ngoài phạm vi thuyết trình 179–206."
   },
   {
     "number": 29,
@@ -1057,7 +1058,8 @@ export const pages: MagazinePage[] = [
         "title": "Dân tộc tác động trở lại giai cấp",
         "text": "Sự hình thành dân tộc tạo không gian cho sự phát triển giai cấp. Trong điều kiện bị áp bức dân tộc, giải phóng dân tộc là điều kiện, tiền đề cho giải phóng giai cấp.",
         "source": "extension",
-        "textbookPage": "207–208"
+        "textbookPage": "207–208",
+        "label": "ĐỌC THÊM · NGOÀI PHẠM VI 179–206"
       },
       {
         "title": "Nhân loại",
